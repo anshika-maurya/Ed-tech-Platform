@@ -59,7 +59,7 @@ function CourseDetails() {
   }, [response])
   // console.log("avgReviewCount: ", avgReviewCount)
 
-  // // Collapse all
+  
   // const [collapse, setCollapse] = useState("")
   const [isActive, setIsActive] = useState(Array(0))
   const handleActive = (id) => {
@@ -102,7 +102,7 @@ function CourseDetails() {
     courseContent,
     ratingAndReviews,
     instructor,
-    studentsEnroled,
+    studentsEnrolled,
     createdAt,
   } = response.data?.courseDetails
 
@@ -157,7 +157,7 @@ function CourseDetails() {
                 <span className="text-yellow-25">{avgReviewCount}</span>
                 <RatingStars Review_Count={avgReviewCount} Star_Size={24} />
                 <span>{`(${ratingAndReviews.length} reviews)`}</span>
-                <span>{`${studentsEnroled.length} students enrolled`}</span>
+                <span>{`${studentsEnrolled.length} students enrolled`}</span>
               </div>
               <div>
                 <p className="">

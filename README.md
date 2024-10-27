@@ -1,7 +1,5 @@
 # 📚 **StudyNotion** - *An Ed-Tech Platform* 🎓
 
-![StudyNotion Banner](.) <!-- Placeholder; replace with an actual image link if available -->
-
 StudyNotion is a feature-rich, full-stack educational platform that enables users to create, access, and rate various educational courses. Built on the powerful MERN stack—**MongoDB, Express, React, and Node.js**—it aims to offer an engaging learning experience for students and a productive teaching environment for instructors.
 
 # 🛠️ **Project Overview**
@@ -16,9 +14,6 @@ The **StudyNotion** platform adopts a client-server architecture with three main
 - **Backend**: Powered by NodeJS and Express, handling business logic, user data, and course content.
 - **Database**: NoSQL data storage with MongoDB for structured, flexible content storage.
 
-### **Architecture Diagram**
-![Architecture Diagram](![architecture](https://github.com/user-attachments/assets/b524acc0-7b4f-41a2-97d0-21690b0c8063)
-) <!-- Placeholder; replace with an actual image link if available -->
 
 ---
 
@@ -97,7 +92,7 @@ We welcome contributions to make StudyNotion even better! Please fork this repos
 
 ## 📄 **License**
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. Please look at the [LICENSE](LICENSE) file for details.
 
 ---
 

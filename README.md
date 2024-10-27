@@ -6,10 +6,6 @@ StudyNotion is a feature-rich, full-stack educational platform that enables user
 
 ## 🛠️ **Project Overview**
 
-### 🌟 Key Features:
-- **For Students**: A seamless, interactive learning environment with course browsing, wish-listing, checkout, and detailed content views.
-- **For Instructors**: A robust course creation and management system with dashboards and course analytics.
-- **For Admins** *(Future Scope)*: Tools for platform oversight, including insights on user activity, revenue, and course/instructor metrics.
 
 ---
 

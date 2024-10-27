@@ -107,7 +107,7 @@ The platform's **RESTful API** supports the following endpoints:
 ---
 
 ## Deployment
-The application is deployed on [hosting provider], with configurations for scalability and continuous integration. Deployment scripts are available in this repository to facilitate deployment.
+The application is deployed on Vercel for frontend & Render for Backend, with configurations for scalability and continuous integration. Deployment scripts are available in this repository to facilitate deployment.
 
 ---
 

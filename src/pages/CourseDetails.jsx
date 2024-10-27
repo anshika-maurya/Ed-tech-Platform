@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react"
 import { BiInfoCircle } from "react-icons/bi"
 import { HiOutlineGlobeAlt } from "react-icons/hi"
 import { ReactMarkdown } from 'https://esm.sh/react-markdown@9'
-
-
-
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
-
 import ConfirmationModal from "../components/Common/ConfirmationModal"
 import Footer from "../components/Common/Footer"
 import RatingStars from "../components/Common/RatingStars"
@@ -21,7 +17,7 @@ import Error from "./Error"
 
 
 
-function CourseDetails() {
+const CourseDetails = () => {
   const { user } = useSelector((state) => state.profile)
   const { token } = useSelector((state) => state.auth)
   const { loading } = useSelector((state) => state.profile)
@@ -34,19 +30,23 @@ function CourseDetails() {
   // console.log(`course id: ${courseId}`)
 
   // Declear a state to save the course details
-  const [response, setResponse] = useState(null)
+  // const [response, setResponse] = useState(null)
   const [confirmationModal, setConfirmationModal] = useState(null)
+
+  const [courseData , setCourseData] = useState(null);
+
   useEffect(() => {
     // Calling fetchCourseDetails function to fetch the details
-    (async () => {
+    const getCourseFullDetails = async() => {
       try {
         const res = await fetchCourseDetails(courseId)
         // console.log("course details res: ", res)
-        setResponse(res)
+        setCourseData(res)
       } catch (error) {
         console.log("Could not fetch Course Details")
       }
-    })()
+    }
+    getCourseFullDetails();
   }, [courseId])
 
   // console.log("response: ", response)
@@ -54,9 +54,9 @@ function CourseDetails() {
   // Calculating Avg Review count
   const [avgReviewCount, setAvgReviewCount] = useState(0)
   useEffect(() => {
-    const count = GetAvgRating(response?.data?.courseDetails.ratingAndReviews)
+    const count = GetAvgRating(courseData?.data?.courseDetails.ratingAndReviews)
     setAvgReviewCount(count)
-  }, [response])
+  }, [courseData])
   // console.log("avgReviewCount: ", avgReviewCount)
 
   
@@ -75,36 +75,11 @@ function CourseDetails() {
   const [totalNoOfLectures, setTotalNoOfLectures] = useState(0)
   useEffect(() => {
     let lectures = 0
-    response?.data?.courseDetails?.courseContent?.forEach((sec) => {
+    courseData?.data?.courseDetails?.courseContent?.forEach((sec) => {
       lectures += sec.subSection.length || 0
     })
     setTotalNoOfLectures(lectures)
-  }, [response])
-
-  if (loading || !response) {
-    return (
-      <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
-        <div className="spinner"></div>
-      </div>
-    )
-  }
-  if (!response.success) {
-    return <Error />
-  }
-
-  const {
-    _id: course_id,
-    courseName,
-    courseDescription,
-    thumbnail,
-    price,
-    whatYouWillLearn,
-    courseContent,
-    ratingAndReviews,
-    instructor,
-    studentsEnrolled,
-    createdAt,
-  } = response.data?.courseDetails
+  }, [courseData])
 
   const handleBuyCourse = () => {
     if (token) {
@@ -121,6 +96,17 @@ function CourseDetails() {
     })
   }
 
+  if (loading || !courseData) {
+    return (
+      <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
+        <div className="spinner"></div>
+      </div>
+    )
+  }
+  if (!courseData.success) {
+    return(<div> <Error /></div> )
+  }
+
   if (paymentLoading) {
     // console.log("payment loading")
     return (
@@ -130,8 +116,23 @@ function CourseDetails() {
     )
   }
 
+  const {
+    _id: course_id,
+    courseName,
+    courseDescription,
+    thumbnail,
+    price,
+    whatYouWillLearn,
+    courseContent,
+    ratingAndReviews,
+    instructor,
+    studentsEnrolled,
+    createdAt,
+  } = courseData.data?.courseDetails
+
+
   return (
-    <>
+    <div>
       <div className={`relative w-full bg-richblack-800`}>
         {/* Hero Section */}
         <div className="mx-auto box-content px-4 lg:w-[1260px] 2xl:relative ">
@@ -188,7 +189,7 @@ function CourseDetails() {
           {/* Courses Card */}
           <div className="right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 md:translate-y-0 lg:absolute  lg:block">
             <CourseDetailsCard
-              course={response?.data?.courseDetails}
+              course={courseData?.data?.courseDetails}
               setConfirmationModal={setConfirmationModal}
               handleBuyCourse={handleBuyCourse}
             />
@@ -217,7 +218,7 @@ function CourseDetails() {
                   <span>
                     {totalNoOfLectures} {`lecture(s)`}
                   </span>
-                  <span>{response.data?.totalDuration} total length</span>
+                  <span>{courseData.data?.totalDuration} total length</span>
                 </div>
                 <div>
                   <button
@@ -266,7 +267,7 @@ function CourseDetails() {
       </div>
       <Footer />
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
-    </>
+    </div>
   )
 }
 

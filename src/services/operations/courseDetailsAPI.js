@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast"
 
-// import { updateCompletedLectures } from "../../slices/viewCourseSlice"
+import { updateCompletedLectures } from "../../slices/viewCourseSlice"
 // import { setLoading } from "../../slices/profileSlice";
 import { apiConnector } from "../apiConnector"
 import { courseEndpoints } from "../apis"
@@ -8,6 +8,7 @@ import { courseEndpoints } from "../apis"
 const {
   COURSE_DETAILS_API,
   COURSE_CATEGORIES_API,
+  CREATE_CATEGORY_API,
   GET_ALL_COURSE_API,
   CREATE_COURSE_API,
   EDIT_COURSE_API,
@@ -22,6 +23,7 @@ const {
   GET_FULL_COURSE_DETAILS_AUTHENTICATED,
   CREATE_RATING_API,
   LECTURE_COMPLETION_API,
+  ADD_COURSE_TO_CATEGORY_API,
 } = courseEndpoints
 
 export const getAllCourses = async () => {
@@ -77,7 +79,7 @@ export const fetchCourseCategories = async () => {
     result = response?.data?.data
   } catch (error) {
     console.log("COURSE_CATEGORY_API API ERROR............", error)
-    toast.error(error.message)
+    toast.error(error?.response?.data?.message)
   }
   return result
 }
@@ -99,7 +101,7 @@ export const addCourseDetails = async (data, token) => {
     result = response?.data?.data
   } catch (error) {
     console.log("CREATE COURSE API ERROR............", error)
-    toast.error(error.message)
+    toast.error(error.response.data.message)
   }
   toast.dismiss(toastId)
   return result
@@ -122,7 +124,7 @@ export const editCourseDetails = async (data, token) => {
     result = response?.data?.data
   } catch (error) {
     console.log("EDIT COURSE API ERROR............", error)
-    toast.error(error.message)
+    toast.error(error.response.data.message)
   }
   toast.dismiss(toastId)
   return result
@@ -153,7 +155,7 @@ export const createSection = async (data, token) => {
 // create a subsection
 export const createSubSection = async (data, token) => {
   let result = null
-  const toastId = toast.loading("Loading...")
+  const toastId = toast.loading("Uploading...")
   try {
     const response = await apiConnector("POST", CREATE_SUBSECTION_API, data, {
       Authorization: `Bearer ${token}`,
@@ -381,6 +383,50 @@ export const createRating = async (data, token) => {
   } catch (error) {
     success = false
     console.log("CREATE RATING API ERROR............", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
+  return success
+}
+// add course tO category
+export const addCourseToCategory = async (data, token) => {
+  const toastId = toast.loading("Loading...")
+  let success = false
+  try {
+    const response = await apiConnector("POST", ADD_COURSE_TO_CATEGORY_API, data, {
+      Authorization: `Bearer ${token}`,
+    })
+    console.log("ADD COURSE TO CATEGORY API RESPONSE RESPONSE............", response)
+    if (!response?.data?.success) {
+      throw new Error("Could Not Add Course ti Category")
+    }
+    toast.success("Course Added To Category")
+    success = true
+  } catch (error) {
+    success = false
+    console.log("ADD COURSE TO CATEGORY API ERROR............", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
+  return success
+}
+// CREATE CATEGORY
+export const createCategory = async (data, token) => {
+  const toastId = toast.loading("Loading...")
+  let success = false
+  try {
+    const response = await apiConnector("POST", CREATE_CATEGORY_API, data, {
+      Authorization: `Bearer ${token}`,
+    })
+    console.log("CREATE CATEGORY API RESPONSE RESPONSE............", response)
+    if (!response?.data?.success) {
+      throw new Error("Could Not Create Category")
+    }
+    toast.success("Category created")
+    success = true
+  } catch (error) {
+    success = false
+    console.log("CREATE CATEGORY API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)

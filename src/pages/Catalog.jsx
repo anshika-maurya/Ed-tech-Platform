@@ -12,9 +12,9 @@ import Error from "./Error"
 const Catalog = () => {
 
   const { loading } = useSelector((state) => state.profile)
-const { catalogName } = useParams()
-const [active, setActive] = useState(1)
-  const [catalogPageData, setCatalogPageData] = useState(null);
+  const { catalogName } = useParams()
+  const [active, setActive] = useState(1)
+  const [catalogPageData, setCatalogPageData] = useState("");
   const [categoryId, setCategoryId] = useState("");
 
   //Fetch all categories
@@ -89,7 +89,7 @@ const [active, setActive] = useState(1)
               } cursor-pointer`}
               onClick={() => setActive(1)}
             >
-              Most Populer
+              Most Popular
             </p>
             <p
               className={`px-4 py-2 ${

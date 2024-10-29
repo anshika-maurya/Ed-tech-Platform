@@ -17,7 +17,7 @@ import Error from "./Error"
 
 
 
-const CourseDetails = () => {
+function CourseDetails() {
   const { user } = useSelector((state) => state.profile)
   const { token } = useSelector((state) => state.auth)
   const { loading } = useSelector((state) => state.profile)
@@ -30,23 +30,19 @@ const CourseDetails = () => {
   // console.log(`course id: ${courseId}`)
 
   // Declear a state to save the course details
-  // const [response, setResponse] = useState(null)
+  const [response, setResponse] = useState(null)
   const [confirmationModal, setConfirmationModal] = useState(null)
-
-  const [courseData , setCourseData] = useState(null);
-
   useEffect(() => {
-    // Calling fetchCourseDetails function to fetch the details
-    const getCourseFullDetails = async() => {
+    // Calling fetchCourseDetails fucntion to fetch the details
+    ;(async () => {
       try {
         const res = await fetchCourseDetails(courseId)
         // console.log("course details res: ", res)
-        setCourseData(res)
+        setResponse(res)
       } catch (error) {
         console.log("Could not fetch Course Details")
       }
-    }
-    getCourseFullDetails();
+    })()
   }, [courseId])
 
   // console.log("response: ", response)
@@ -54,12 +50,12 @@ const CourseDetails = () => {
   // Calculating Avg Review count
   const [avgReviewCount, setAvgReviewCount] = useState(0)
   useEffect(() => {
-    const count = GetAvgRating(courseData?.data?.courseDetails.ratingAndReviews)
+    const count = GetAvgRating(response?.data?.courseDetails.ratingAndReviews)
     setAvgReviewCount(count)
-  }, [courseData])
+  }, [response])
   // console.log("avgReviewCount: ", avgReviewCount)
 
-  
+  // Collapse all
   // const [collapse, setCollapse] = useState("")
   const [isActive, setIsActive] = useState(Array(0))
   const handleActive = (id) => {
@@ -67,7 +63,7 @@ const CourseDetails = () => {
     setIsActive(
       !isActive.includes(id)
         ? isActive.concat([id])
-        : isActive.filter((e) => e !== id)
+        : isActive.filter((e) => e != id)
     )
   }
 
@@ -75,11 +71,36 @@ const CourseDetails = () => {
   const [totalNoOfLectures, setTotalNoOfLectures] = useState(0)
   useEffect(() => {
     let lectures = 0
-    courseData?.data?.courseDetails?.courseContent?.forEach((sec) => {
+    response?.data?.courseDetails?.courseContent?.forEach((sec) => {
       lectures += sec.subSection.length || 0
     })
     setTotalNoOfLectures(lectures)
-  }, [courseData])
+  }, [response])
+
+  if (loading || !response) {
+    return (
+      <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
+        <div className="spinner"></div>
+      </div>
+    )
+  }
+  if (!response.success) {
+    return <Error />
+  }
+
+  const {
+    _id: course_id,
+    courseName,
+    courseDescription,
+    thumbnail,
+    price,
+    whatYouWillLearn,
+    courseContent,
+    ratingAndReviews,
+    instructor,
+    studentsEnrolled,
+    createdAt,
+  } = response.data?.courseDetails
 
   const handleBuyCourse = () => {
     if (token) {
@@ -96,17 +117,6 @@ const CourseDetails = () => {
     })
   }
 
-  if (loading || !courseData) {
-    return (
-      <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
-        <div className="spinner"></div>
-      </div>
-    )
-  }
-  if (!courseData.success) {
-    return(<div> <Error /></div> )
-  }
-
   if (paymentLoading) {
     // console.log("payment loading")
     return (
@@ -116,23 +126,8 @@ const CourseDetails = () => {
     )
   }
 
-  const {
-    _id: course_id,
-    courseName,
-    courseDescription,
-    thumbnail,
-    price,
-    whatYouWillLearn,
-    courseContent,
-    ratingAndReviews,
-    instructor,
-    studentsEnrolled,
-    createdAt,
-  } = courseData.data?.courseDetails
-
-
   return (
-    <div>
+    <>
       <div className={`relative w-full bg-richblack-800`}>
         {/* Hero Section */}
         <div className="mx-auto box-content px-4 lg:w-[1260px] 2xl:relative ">
@@ -189,7 +184,7 @@ const CourseDetails = () => {
           {/* Courses Card */}
           <div className="right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 md:translate-y-0 lg:absolute  lg:block">
             <CourseDetailsCard
-              course={courseData?.data?.courseDetails}
+              course={response?.data?.courseDetails}
               setConfirmationModal={setConfirmationModal}
               handleBuyCourse={handleBuyCourse}
             />
@@ -218,7 +213,7 @@ const CourseDetails = () => {
                   <span>
                     {totalNoOfLectures} {`lecture(s)`}
                   </span>
-                  <span>{courseData.data?.totalDuration} total length</span>
+                  <span>{response.data?.totalDuration} total length</span>
                 </div>
                 <div>
                   <button
@@ -267,7 +262,7 @@ const CourseDetails = () => {
       </div>
       <Footer />
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
-    </div>
+    </>
   )
 }
 

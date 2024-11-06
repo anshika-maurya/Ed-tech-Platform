@@ -20,7 +20,7 @@ const Catalog = () => {
   const dispatch = useDispatch();
 
 
-  const fetchSublinks=  async ()=>{
+  const fetchSublinks =  async ()=>{
     try {
         const result = await apiConnector("GET",categories.CATEGORIES_API);
         const category_id= result.data.data.filter((item)=>item.name=== Catalog.catalog)[0]._id;

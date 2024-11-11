@@ -40,7 +40,7 @@ useEffect(() => {
 useEffect(() => {
     const fetchCatalogPageData = async () => {
         
-            const result = await getCatalogPageData(categoryID,dispatch);
+            const result = await getCatalogPageData(categoryID, dispatch);
             setCatalogPageData(result);
             // console.log("page data",CatalogPageData);
         
@@ -71,14 +71,14 @@ useEffect(() => {
           <button onClick={()=>{setActiveOption(1)}}  className={activeOption===1? `px-4 py-2 border-b border-b-yellow-25 text-yellow-25 cursor-pointer`:`px-4 py-2 text-richblack-50 cursor-pointer` }>Most Populer</button>
           <button onClick={()=>{setActiveOption(2)}} className={activeOption===1?'px-4 py-2 text-richblack-50 cursor-pointer':'px-4 py-2 border-b border-b-yellow-25 text-yellow-25 cursor-pointer'}>New</button>
         </div>
-        <CourseCard Courses={CatalogPageData?.selectedCourses}/>        
+        <CourseSlider Courses={CatalogPageData?.selectedCourses}/>        
       </div>
 
       <div className=' mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent'>
         <h2 className='section_heading mb-6 md:text-3xl text-xl'>
           Similar to {Catalog.catalog}
         </h2>
-        <CourseCard Courses={CatalogPageData?.differentCourses}/>
+        <CourseSlider Courses={CatalogPageData?.differentCourses}/>
       </div>
       
       <div className=' mx-auto box-content w-full max-w-maxContentTab px-2 py-12 lg:max-w-maxContent'>

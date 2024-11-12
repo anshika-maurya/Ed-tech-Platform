@@ -9,7 +9,12 @@ Below are some screenshots demonstrating key features of the project:
 ## Homepage
 ![Homepage Screenshot](https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/1_Homepage.jpeg)
 
-
+<div style="display: flex; overflow-x: auto; gap: 10px;">
+  <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/6_Login.png" alt="Homepage Screenshot" width="300">
+  <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/7_SignIn.png" alt="Dashboard Screenshot" width="300">
+  <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/8_EnterEmailResetPassword.png" alt="Settings Screenshot" width="300">
+  <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/9_ResendEmail.png" alt="Mobile View Screenshot" width="300">
+</div>
 
 
 # 🛠️ **Project Overview**

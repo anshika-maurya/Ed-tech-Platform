@@ -9,6 +9,8 @@ Below are some screenshots demonstrating key features of the project:
 ## Homepage
 ![Homepage Screenshot](https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/1_Homepage.jpeg)
 
+## Key Pages and Features
+
 <div style="width: 100%; overflow: hidden;">
    <div style="display: flex; width: 400%; animation: slide 12s infinite;">
       <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/6_Login.png"  width="300">

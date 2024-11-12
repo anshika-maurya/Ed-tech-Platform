@@ -11,10 +11,23 @@ Below are some screenshots demonstrating key features of the project:
 
 <div style="width: 100%; overflow: hidden;">
    <div style="display: flex; width: 400%; animation: slide 12s infinite;">
-      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/6_Login.png" alt="Homepage Screenshot"       width="300">
-      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/7_SignIn.png" alt="Dashboard Screenshot"       width="300">
-      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/8_EnterEmailResetPassword.png"     alt="Settings   Screenshot" width="300">
-      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/9_ResendEmail.png" alt="Mobile View       Screenshot" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/6_Login.png"  width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/7_SignIn.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/5_AboutUs.png"  width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/4_ContactUs.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/8_EnterEmailResetPassword.png"      width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/9_ResendEmail.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/10_Setnewpassword.png"  width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/11_InstructorDashboard.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/13_Addcourse.png"      width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/14_Course-builder.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/15_Addinglecture.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/16_Publish.png"  width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/17_InstructorCourses.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/18_DeleteCourse-modal.png"      width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/19_Studentdashboard.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/20_Settings.png"      width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/21_Log-outModal.png" width="300">
    </div>
 </div>
 

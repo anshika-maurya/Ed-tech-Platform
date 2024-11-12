@@ -2,6 +2,16 @@
 
 StudyNotion is a feature-rich, full-stack educational platform that enables users to create, access, and rate various educational courses. Built on the powerful MERN stack—**MongoDB, Express, React, and Node.js**—it aims to offer an engaging learning experience for students and a productive teaching environment for instructors.
 
+# Screenshots
+
+Below are some screenshots demonstrating key features of the project:
+
+## Homepage
+![Homepage Screenshot](https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/1_Homepage.jpeg)
+
+
+
+
 # 🛠️ **Project Overview**
 
 

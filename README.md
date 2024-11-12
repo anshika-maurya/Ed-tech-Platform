@@ -9,12 +9,24 @@ Below are some screenshots demonstrating key features of the project:
 ## Homepage
 ![Homepage Screenshot](https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/1_Homepage.jpeg)
 
-<div style="display: flex; overflow-x: auto; gap: 10px;">
-  <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/6_Login.png" alt="Homepage Screenshot" width="300">
-  <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/7_SignIn.png" alt="Dashboard Screenshot" width="300">
-  <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/8_EnterEmailResetPassword.png" alt="Settings Screenshot" width="300">
-  <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/9_ResendEmail.png" alt="Mobile View Screenshot" width="300">
+<div style="width: 100%; overflow: hidden;">
+   <div style="display: flex; width: 400%; animation: slide 12s infinite;">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/6_Login.png" alt="Homepage Screenshot"       width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/7_SignIn.png" alt="Dashboard Screenshot"       width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/8_EnterEmailResetPassword.png"     alt="Settings   Screenshot" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/9_ResendEmail.png" alt="Mobile View       Screenshot" width="300">
+   </div>
 </div>
+
+<style>
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+  }
+</style>
 
 
 # 🛠️ **Project Overview**

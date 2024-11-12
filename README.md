@@ -18,15 +18,7 @@ Below are some screenshots demonstrating key features of the project:
    </div>
 </div>
 
-<style>
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
-  }
-</style>
+
 
 
 # 🛠️ **Project Overview**

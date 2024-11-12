@@ -25,7 +25,7 @@ Below are some screenshots demonstrating key features of the project:
       <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/16_Publish.png"  width="300">
       <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/17_InstructorCourses.png" width="300">
       <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/18_DeleteCourse-modal.png"      width="300">
-      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/19_Studentdashboard.png" width="300">
+      <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/19_StudentDashboard.png" width="300">
       <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/20_Settings.png"      width="300">
       <img src="https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/Screenshots/21_Log-outModal.png" width="300">
    </div>

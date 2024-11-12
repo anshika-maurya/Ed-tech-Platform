@@ -14,7 +14,7 @@ The **StudyNotion** platform adopts a client-server architecture with three main
 - **Backend**: Powered by NodeJS and Express, handling business logic, user data, and course content.
 - **Database**: NoSQL data storage with MongoDB for structured, flexible content storage.
 
-![Alt text](https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/assets/Images/architecture.png)
+![Alt text](https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/architecture.png)
 
 ---
 
@@ -47,7 +47,7 @@ The backend utilizes **Node.js** and **Express.js** to support multiple function
 
 ## 📡 **API Design**
 
-![Alt text](https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/assets/Images/schema.png)
+![Alt text](https://github.com/anshika-maurya/Ed-tech-Platform/raw/main/src/assets/Images/schema.png)
 
 ### API Highlights:
 Following RESTful principles, the API allows efficient and secure data management and retrieval.

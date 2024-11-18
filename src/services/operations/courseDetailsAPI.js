@@ -41,28 +41,28 @@ export const getAllCourses = async () => {
 }
 
 export const fetchCourseDetails = async (courseId) => {
-  const toastId = toast.loading("Loading...")
-  //   dispatch(setLoading(true));
-  let result = null
+  const toastId = toast.loading("Loading...");
+  let result = null;
   try {
-    const response = await apiConnector("POST", COURSE_DETAILS_API, {
-      courseId,
-    })
-    console.log("COURSE_DETAILS_API API RESPONSE............", response)
+    const response = await apiConnector("POST", COURSE_DETAILS_API, { courseId });
+    console.log("COURSE_DETAILS_API API RESPONSE............", response);
 
     if (!response?.data?.success) {
-      throw new Error(response?.data?.message)
+      throw new Error(response?.data?.message);
     }
-    result = response?.data
+
+    result = response?.data;
   } catch (error) {
-    console.log("COURSE_DETAILS_API API ERROR............", error)
-    result = error?.response?.data
-    // toast.error(error.response.data.message);
+    console.log("COURSE_DETAILS_API API ERROR............", error);
+    toast.error(error?.response?.data?.message || "Error fetching course details");
+    result = error?.response?.data || { success: false, message: "Unexpected error occurred" };
+  } finally {
+    toast.dismiss(toastId);
   }
-  toast.dismiss(toastId)
-  //   dispatch(setLoading(false));
-  return result
-}
+
+  return result;
+};
+
 
 // fetching the available course categories
 export const fetchCourseCategories = async () => {

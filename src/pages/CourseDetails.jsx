@@ -31,7 +31,7 @@ function CourseDetails() {
     const [confirmationModal, setConfirmationModal] = useState(null)
     useEffect(() => {
       // Calling fetchCourseDetails fucntion to fetch the details
-      ;(async () => {
+      (async () => {
         try {
           const res = await fetchCourseDetails(courseId)
           // console.log("course details res: ", res)
@@ -40,14 +40,14 @@ function CourseDetails() {
           console.log("Could not fetch Course Details")
         }
       })()
-    }, [courseId])
+    }, [courseId, fetchCourseDetails])
   
     // console.log("response: ", response)
   
     // Calculating Avg Review count
     const [avgReviewCount, setAvgReviewCount] = useState(0)
     useEffect(() => {
-      const count = GetAvgRating(response?.data?.courseDetails.ratingAndReviews)
+      const count = GetAvgRating(response?.data?.courseDetails?.ratingAndReviews)
       setAvgReviewCount(count)
     }, [response])
     // console.log("avgReviewCount: ", avgReviewCount)

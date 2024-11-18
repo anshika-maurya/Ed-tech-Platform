@@ -1,6 +1,7 @@
 import "./App.css"
 
 // React Router
+
 import { Route, Routes, useNavigate } from "react-router-dom"
 
 // Redux
@@ -163,6 +164,7 @@ function App() {
       }
 
       </Route>
+      <Route path="/courses/:courseId" element={<CourseDetails />} />
 
 
 

@@ -40,7 +40,7 @@ function CourseDetails() {
           console.log("Could not fetch Course Details")
         }
       })()
-    }, [courseId, fetchCourseDetails])
+    }, [courseId])
   
     // console.log("response: ", response)
   

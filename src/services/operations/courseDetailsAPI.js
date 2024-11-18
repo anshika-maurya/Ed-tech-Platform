@@ -50,13 +50,13 @@ export const fetchCourseDetails = async (courseId) => {
     })
     console.log("COURSE_DETAILS_API API RESPONSE............", response)
 
-    if (!response.data.success) {
-      throw new Error(response.data.message)
+    if (!response?.data?.success) {
+      throw new Error(response?.data?.message)
     }
-    result = response.data
+    result = response?.data
   } catch (error) {
     console.log("COURSE_DETAILS_API API ERROR............", error)
-    result = error.response.data
+    result = error?.response?.data
     // toast.error(error.response.data.message);
   }
   toast.dismiss(toastId)

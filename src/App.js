@@ -164,7 +164,7 @@ function App() {
       }
 
       </Route>
-      <Route path="/courses/:courseId" element={<CourseDetails />} />
+      
 
 
 

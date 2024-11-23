@@ -13,7 +13,7 @@ const CourseCard = ({course, Height}) => {
   // console.log("count............", avgReviewCount)
 
   return (
-    <div className=' mb-4 hover:scale-[1.03] transition-all duration-200 z-50 '>
+    <>
       <Link to={`/courses/${course._id}`}>
         <div>
           <div className="rounded-lg">
@@ -25,9 +25,7 @@ const CourseCard = ({course, Height}) => {
           </div>
           <div className="flex flex-col gap-2 px-1 py-3">
             <p className="text-sm md:text-xl text-richblack-5">{course?.courseName}</p>
-            <p className="text-[12px] md:text-xl text-richblack-50">By <span className="text-yellow-50"> {course?.instructor?.firstName} {course?.instructor?.lastName} </span> 
-           
-              
+            <p className="text-[12px] md:text-xl text-richblack-50">By<span> </span> <span className="text-yellow-50"> {course?.instructor?.firstName} {course?.instructor?.lastName} </span> 
             </p>
             <div className="flex items-center gap-2">
               <span className="text-yellow-5">{avgReviewCount || 0}</span>
@@ -49,7 +47,7 @@ const CourseCard = ({course, Height}) => {
           </div>
         </div>
       </Link>
-    </div>
+    </>
   )
 }
 
